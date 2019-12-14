@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    曲线图实例
+    <!-- 引入 ECharts 文件 -->
+    <script src="Content/echarts.min.js"></script>
+</head>
+<body>
+<!-- 下面的div 用于在页面上显示图形DOM占位 -->
+    <div id="divEcharts" style="width:800px;height:500px;"></div>
+    <script type="text/javascript">
+        option = {
+        dataset: {
+        source: [
+            ['score', 'amount', 'product'],
+            [89.3, 58212, 'Matcha Latte'],
+            [57.1, 78254, 'Milk Tea'],
+            [74.4, 41032, 'Cheese Cocoa'],
+            [50.1, 12755, 'Cheese Brownie'],
+            [89.7, 20145, 'Matcha Cocoa'],
+            [68.1, 79146, 'Tea'],
+            [19.6, 91852, 'Orange Juice'],
+            [10.6, 101852, 'Lemon Juice'],
+            [32.7, 20112, 'Walnut Brownie']
+        ]
+    },
+            xAxis: {
+                type: 'category',
+                data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
+            },
+            yAxis: {
+                type: 'value'
+            },
+            series: [{
+                data: [820, 932, 901, 934, 1290, 1330, 1320],
+                type: 'line',
+                smooth: true
+            },
+            {
+                data: [20, 32, 11, 94, 190, 130, 10],
+                type: 'line',
+                smooth: true
+            }]
+        };
+
+
+
+        <!-- 将页面的DOM与echarts绑定 -->
+        myChart = echarts.init(document.getElementById('divEcharts'));
+        // 使用刚指定的配置项和数据显示图表。
+        myChart.setOption(option);
+
+    </script>
+</body>
+</html>
+
